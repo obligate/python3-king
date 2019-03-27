@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            background-color: black;
+            color:white;
+        }
+        .content{
+            min-height: 50px;
+        }
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div style="height:400px;width:200px;border:1px solid #dddddd;">
+    <div class="item">
+        <div class="header">标题1</div>
+        <div class="content">内容</div>
+    </div>
+     <div class="item">
+        <div class="header">标题2</div>
+        <div class="content hide">内容</div>
+    </div>
+     <div class="item">
+        <div class="header">标题3</div>
+        <div class="content hide">内容</div>
+    </div>
+     <div class="item">
+        <div class="header">标题4</div>
+        <div class="content hide">内容</div>
+    </div>
+
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('.header').click(function(){
+       // 当前点击的标签$(this)
+       // 获取某个标签的下一个标签，移除hide
+       // 获取某个标签的父标签
+       // 获取所有的兄弟标签，添加hide
+        /*
+        * $(this).next()        下一个
+        * $(this).prev()        上一个
+        * $(this).parent()      父
+        * $(this).children()    孩子
+        * $(this).siblings()    兄弟
+        * $(this).find()        在子子孙孙中找
+        * */
+        // $(this).next().removeClass("hide");
+        // $(this).parent().siblings().find(".content").addClass('hide');
+
+        // 一行搞定，jquery支持链式编程
+        $(this).next().removeClass("hide").parent().siblings().find(".content").addClass('hide');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+            $(window).scrollTop()  获取
+			$(window).scrollTop(0) 设置,返回顶部
+			scrollLeft([val])
+
+            offset().left                 指定标签在html中的坐标
+			offset().top                  指定标签在html中的坐标
+
+			position() 	                  指定标签相对父标签(relative)标签的坐标
+			<div style='relative'>
+				<div>
+					<div id='i1' style='position:absolute;height:80px;border:1px'></div>
+				</div>
+			</div>
+
+
+			$('i1').height()           # 获取标签的高度 纯高度
+			$('i1').innerHeight()      # 获取边框 + 纯高度 + ？
+			$('i1').outerHeight()      # 获取边框 + 纯高度 + ？
+			$('i1').outerHeight(true)  # 获取边框 + 纯高度 + ？
+
+			# 纯高度，边框，外边距，内边距
+-->
+    <div id="i1"></div>
+     <div style="height: 100px;width:100px;overflow: auto">
+            <p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p>
+            <p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p>
+            <p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p>
+            <p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p>
+            <p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p>
+            <p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p>
+        </div>
+     <div id="i2"></div>
+    <div style="height: 1000px;"></div>
+    <script src="jquery-1.12.4.js"></script>
+</body>
+</html>

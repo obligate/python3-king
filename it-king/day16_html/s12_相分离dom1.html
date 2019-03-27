@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border: 1px solid red;
+        }
+
+        table {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<!--  行为，样式，结构相分离的页面-->
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+<script>
+    var trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function () {
+            this.style.backgroundColor = "blue";
+        };
+        trs[i].onmouseout = function () {
+            this.style.backgroundColor = "";
+        };
+    }
+</script>
+</body>
+</html>

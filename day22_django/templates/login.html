@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="user" />
+        <input type="text" name="pwd" />
+        <input type="checkbox" name="rmb" value="1" /> 10秒免登录
+        <input type="submit" value="提交" />
+        <input id="btn1" type="button" value="按钮-AJAX-CRSF测试1" />
+        <input id="btn2" type="button" value="按钮-AJAX-CRSF测试2" />
+    </form>
+
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            //$.ajaxSetup为所有整个页面的all ajax添加csrf请求header
+            // 发送ajax请求的时候会优先执行，是一个全局的配置，不用在调用ajax的每个请求添加header，例如btn1和btn2的header就可以注释掉
+            // 建议使用
+            $.ajaxSetup({
+                beforeSend: function(xhr,settings){ //xhr就是XMLHttpRequest,底层的发送ajax请求的对象
+                    xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken'));
+                }
+            });
+
+            $('#btn1').click(function () {
+                $.ajax({
+                    url: '/login/',
+                    type:"GET",
+                    data: {'user': 'root', 'pwd': '123'},
+                     // 发送请求的时候，发送一个带有csrftoken的header
+                    //  setting中是HTTP_X_CSRFTOKEN,其中HTTP_是django添加的，所以我们只需要传递X_CSRFTOKEN
+                    //  但是X_CSRFTOKEN中的下划线，在header中是非法的，所以只能使用X-CSRFtoken
+                    //  如果ajax请求太多，这种太麻烦，可以采用$.ajaxSetup为所有整个页面的all ajax添加csrf请求header
+                    // headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+                    success:function(arg){
+
+                    }
+                })
+            });
+
+             $('#btn2').click(function () {
+                $.ajax({
+                    url: '/login/',
+                    type:"POST",
+                    data: {'user': 'root', 'pwd': '123'},
+                     // 发送请求的时候，发送一个带有csrftoken的header
+                    //  setting中是HTTP_X_CSRFTOKEN,其中HTTP_是django添加的，所以我们只需要传递X_CSRFTOKEN
+                    //  但是X_CSRFTOKEN中的下划线，在header中是非法的，所以只能使用X-CSRFtoken
+                    //  如果ajax请求太多，这种太麻烦，可以采用$.ajaxSetup为所有整个页面的all ajax添加csrf请求header
+                    // headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+                    success:function(arg){
+
+                    }
+                })
+            });
+        })
+    </script>
+</body>
+</html>

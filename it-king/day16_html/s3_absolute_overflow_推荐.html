@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台布局</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .left{
+            float:left;
+        }
+        .right{
+            float:right;
+        }
+        .pg_header {
+            height: 48px;
+            background-color: darkblue;
+            color: white;
+        }
+        .pg_content .menu{
+            position:absolute;
+            top:48px;
+            left:0;
+            bottom:0;
+            width:200px;
+            background-color:gray;
+        }
+        .pg_content .content{
+            position:absolute;
+            top:48px;
+            right:0;
+            bottom:0;
+            left:200px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<!--
+    当滚动的时候，左侧的菜单不固定
+    采用postion:absolute实现布局二，自动出现滚动条，不需要overflow:auto
+    当采用overflow:auto的时候就会出现fixed的效果
+    实现了两种布局方式
+    a、左侧菜单跟随滚动条
+    b、左侧以及以上不动*****
+-->
+<div class="pg_header"></div>
+<div class="pg_content">
+    <div class="menu left">a</div>
+    <div class="content left">
+    <div style="background-color: purple"><p style="margin:0;">Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p>
+    <p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p><p>Whisper</p></div>
+    </div>
+</div>
+<div class="pg_footer"></div>
+</body>
+</html>

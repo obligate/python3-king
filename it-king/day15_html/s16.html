@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态对话框-添加全选，取消，反选</title>
+    <style>
+        .hide{
+            display:none;
+        }
+        .c1{
+            position:fixed;
+            left:0;
+            top:0;
+            right: 0;
+            bottom:0;
+            opacity:0.5;
+            background-color:black;
+            z-index:9;
+        }
+        .c2{
+            height: 400px;
+            width: 500px;
+            position: fixed;
+            left: 50%;
+            top:50%;
+            margin-left:-250px;
+            margin-top:-200px;
+            background-color:white;
+            z-index:10;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="添加" onclick="showModel();"/>
+    <input type="button" value="全选" onclick="chooseAll();"/>
+    <input type="button" value="取消" onclick="cancelAll();"/>
+    <input type="button" value="反选" onclick="reverseAll();"/>
+    <table>
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>主机</th>
+                <th>端口</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>1.1.1.1</td>
+                <td>9001</td>
+            </tr>
+            <tr>
+                 <td><input type="checkbox"/></td>
+                <td>1.1.1.2</td>
+                <td>9002</td>
+            </tr>
+            <tr>
+                 <td><input type="checkbox"/></td>
+                <td>1.1.1.3</td>
+                <td>9003</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--遮罩层开始-->
+<div id="i1" class="c1 hide">
+
+</div>
+<!--遮罩层结束-->
+<!--弹出层开始-->
+<div id="i2" class="c2 hide">
+    <p><label for="txtHost">主机：</label><input type="text"  id="txtHost"/></p>
+    <p><label for="txtPort">端口：</label><input type="text"  id="txtPort"/></p>
+    <p><input type="button" value="确定"/>
+    <input type="button" value="取消" onclick="hideModel();"/></p>
+</div>
+<!--弹出层结束-->
+<script>
+    function showModel(){
+        document.getElementById("i1").classList.remove("hide");
+        document.getElementById("i2").classList.remove("hide");
+    }
+    function hideModel(){
+        document.getElementById("i1").classList.add("hide");
+        document.getElementById("i2").classList.add("hide");
+    }
+    function chooseAll(){
+        var tbody = document.getElementById("tb");
+        var tr_list = tbody.children; // 获取所有的tr
+        // 循环tr，获取checkbox
+        for(var i=0;i<tr_list.length;i++){
+            var current_tr = tr_list[i];
+            var checkbox = current_tr.children[0].children[0]
+            checkbox.checked = true;
+        }
+    }
+    function cancelAll(){
+        var tbody = document.getElementById("tb");
+        var tr_list = tbody.children; // 获取所有的tr
+        // 循环tr，获取checkbox
+        for(var i=0;i<tr_list.length;i++){
+            var current_tr = tr_list[i];
+            var checkbox = current_tr.children[0].children[0]
+            checkbox.checked = false;
+        }
+    }
+    function reverseAll(){
+        var tbody = document.getElementById("tb");
+        var tr_list = tbody.children; // 获取所有的tr
+        // 循环tr，获取checkbox
+        for(var i=0;i<tr_list.length;i++){
+            var current_tr = tr_list[i];
+            var checkbox = current_tr.children[0].children[0]
+            if(checkbox.checked){
+                checkbox.checked = false;
+            }else{
+                checkbox.checked = true;
+            }
+        }
+    }
+</script>
+</body>
+</html>

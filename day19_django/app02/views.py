@@ -1,0 +1,10 @@
+from django.shortcuts import render
+from django.shortcuts import redirect
+from django.shortcuts import HttpResponse
+
+
+# Create your views here.
+
+
+def index(request):
+    return HttpResponse('app02 index ')

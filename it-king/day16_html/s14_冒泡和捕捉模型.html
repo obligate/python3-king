@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main{
+            background-color: red;
+            height: 300px;
+            width: 400px;
+        }
+        #content{
+            background-color: purple;
+            height: 150px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="content"></div>
+    </div>
+
+    <script>
+        var myMain = document.getElementById("main");
+        var myContent = document.getElementById("content");
+
+        // false是冒泡模型，click子元素content的时候从子元素往上，content  main
+        myMain.addEventListener("click",function(){ console.log("main");},false);
+        myContent.addEventListener("click",function(){ console.log("content");},false);
+
+        // true是捕捉模型，click子元素content的时候从父元素往下，main  content
+        // myMain.addEventListener("click",function(){ console.log("main");},true);
+        // myContent.addEventListener("click",function(){ console.log("content");},true);
+    </script>
+</body>
+</html>

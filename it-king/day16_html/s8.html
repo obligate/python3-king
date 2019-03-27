@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="AddEle1();" value="1+"/>
+<input type="button" onclick="AddEle2();" value="2+"/>
+<div id="i1">
+    <p><input type="text"/></p>
+</div>
+<script>
+    function AddEle1(){
+        // 创建一个标签
+        // 将标签添加到i1中
+        var tag = "<p><input type='text'/></p>";
+        // 注意：第一个参数只能是'beforeBegin'、 'afterBegin'、 'beforeEnd'、 'afterEnd'
+        document.getElementById("i1").insertAdjacentHTML("beforeEnd",tag);
+    }
+     function AddEle2(){
+        // 创建一个标签
+        // 将标签添加到i1中
+        var tag = document.createElement("input");
+        tag.setAttribute('type','text');
+        tag.style.fontSize="16px";
+        tag.style.color="red";
+
+        var p = document.createElement("p");
+        p.appendChild(tag);
+
+        document.getElementById("i1").appendChild(p);
+    }
+</script>
+</body>
+</html>

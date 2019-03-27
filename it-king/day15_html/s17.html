@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左侧菜单-点击显示</title>
+    <style>
+        .hide{
+            display:none;
+        }
+        .item .header {
+            height: 35px;
+            background-color: #2459a2;
+            color:white;
+            line-height: 35px;
+        }
+    </style>
+</head>
+<body>
+<div style="width:300px;">
+    <div class="item">
+        <div id="m1" class="header" onclick="changeMenu('m1');">菜单1</div>
+        <div class="content">
+            <div>子菜单1</div>
+            <div>子菜单2</div>
+            <div>子菜单3</div>
+            <div>子菜单4</div>
+        </div>
+    </div>
+    <div class="item">
+        <div id="m2" class="header" onclick="changeMenu('m2');">菜单2</div>
+        <div class="content hide">
+            <div>子菜单1</div>
+            <div>子菜单2</div>
+            <div>子菜单3</div>
+            <div>子菜单4</div>
+        </div>
+    </div>
+    <div class="item">
+        <div id="m3" class="header" onclick="changeMenu('m3');">菜单3</div>
+        <div class="content hide">
+            <div>子菜单1</div>
+            <div>子菜单2</div>
+            <div>子菜单3</div>
+            <div>子菜单4</div>
+        </div>
+    </div>
+    <div class="item">
+        <div id="m4" class="header" onclick="changeMenu('m4');">菜单4</div>
+        <div class="content hide">
+            <div>子菜单1</div>
+            <div>子菜单2</div>
+            <div>子菜单3</div>
+            <div>子菜单4</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeMenu(nid){
+        var currentElement = document.getElementById(nid);
+        // 循环把所有的菜单，隐藏
+        var item_list = currentElement.parentElement.parentElement.children;
+        for(var i=0;i<item_list.length;i++){
+            item_list[i].children[1].classList.add('hide');
+        }
+        // 把当前点击的菜单，显示
+        currentElement.nextElementSibling.classList.remove('hide');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台布局</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .left{
+            float:left;
+        }
+        .right{
+            float:right;
+        }
+        .pg_header {
+            height: 48px;
+            background-color: darkblue;
+            color: white;
+        }
+        .pg_content .menu{
+            width:20%;
+            background-color:red;
+            min-width:200px;
+            height:500px;
+        }
+        .pg_content .content{
+            width:80%;
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+<!--
+
+    这种问题： 当内容很多的时候，左侧的菜单不能固定
+
+
+-->
+<div class="pg_header"></div>
+<div class="pg_content">
+    <div class="menu left">a</div>
+    <div class="content left">
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+        <p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p><p>f</p>
+    </div>
+</div>
+<div class="pg_footer"></div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+html 标签：
+<!DoCTYPE html>   指定浏览器用什么标准来解析html
+html  
+head
+	meta charset='utf-8'
+	meta refersh & url & X-UA-COMPATIBLE
+	title
+	link icon & rel='stylesheet' type="text/css" href=""
+	style
+	script
+body
+	块级标签  特点： 占一块，哪怕数据没有被填充慢
+	行内标签  特点：  有多少占多少，不能设置height，width，可以通过display:inline-block来设置
+	
+	块级标签： H系列（H1,H2,H3,H4,H5,H6） 特点：加大加粗，H1最大，H6最小
+		   P标签，特点，段落之间有间隔
+		   div标签（白板，可以自己控制）
+	行内标签： span标签（白板）,a,img input系列+ form
+	a标签 href 打开连接，或者通过href连接到指定的锚点（使用标签id进行关联）
+	img src title alt 
+	input type="text" value="默认值” name="uname"  id="uname"
+	input type="password" value="默认值" name="pwd" id ="pwd"
+	input type="button" value="按钮显示的值" name="btn" id="btn"
+	input type="submit" value="按钮显示的值" 需要结合form标签使用action method enctype="multipart/form-data"
+	input type="reset" value=按钮显示的值" 重置按钮
+	
+	男：   <input type="radio" name="gender" value="1">
+	女：   <input type="radio" name="gender" value="2" checked="checked">
+	保密： <input type="radio" name="gender" value="3">
+	
+	足球： <input type="checkbox" name="favor" value="1"/>
+	蓝球： <input type="checkbox" name="favor" value="2" checked="checked"/>
+	台球： <input type="checkbox" name="favor" value="3" checked="checked"/>
+	桌球： <input type="checkbox" name="favor" value="4"/>
+	
+	<input type="file" name="fname" /> 需要结合form标签一起使用，设置form的enctype="multipart/form-data"
+
+	<textarea name="txt">默认值</textarea>
+	
+	<select size="5" multiple="multiple" >
+		<option value="1">北京</option>
+		<option value="2" selected="selected">上海</option>
+		<option value="3" selected="selected">重庆</option>
+		<option value="4">天津</option>
+	<select>
+
+	label for 为了让for对应的控件获取焦点
+	fieldset legend
+	
+	ul li
+	ol li
+	dl dt dd
+
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+	colspan 合并列
+	rowspan 合并行
+
+
+
+
+
+css
+选择器
+1. 标签选择器 div{}
+2. id选择器   #idname {}
+3. class选择器 #classname {}
+4. 层级（内联）选择器 .c1 .c2 div{} 使用空格分开
+5. 组合选择器，使用逗号分开  .c1,.c2,.c3{}
+6. 属性选择器使用[] input[type="text"] .c1[type="text"]  
+
+
+基本的
+height:48px 50% ;
+width: 980px 50%;
+text-align:center 文本对齐方式
+line-height: 垂直对齐方式，一般都height值相同即可
+color: red 字体颜色
+font-size:45 字体大小
+font-weight:bold 是否加粗
+background-color: 背景色
+border: 1px solid red 
+margin: 0 auto 可以使控件居中
+padding 内边距，内部变大
+background-image:url(xx.jpg) 特点： 水平或者垂直平铺
+background-repeat:no-repeat,repeat-x,repeat-y
+background-position-x:
+background-position-y:
+float:left right 此时不受控制，需要添加<div style="clear:both"></div>,此时块级就不块级了，就是行内了，占多少就是多少
+display inline block inline-block
+overflow 内部的网速把外面撑大，可以在外层使用改属性： overflow auto hidden ,区别就是auto有滚动条
+hover 伪类，悬停显示的样式.c1 .menu:hover{}
+position:fixed 固定在浏览器的固定位置，即使有滚轮也是不会发送改变
+position:absolute 固定在页面的固定位置，滚轮滚动的时候会位置会发生变化，只是相对当前页面的位置不会变，一般和relative一起使用
+top
+right
+bottom
+left
+opacity
+z-index
+
+
+实例1 图片添加一个链接， a img
+实例2 返回顶部    position:fixed   document.body.scrollTop = 0;
+实例3 头部 内容布局 position:fixed 
+实例5 relative absolute
+实例6 遮罩层 fixed z-index opacity
+实例7 外层指定的height，width不起作用，需要设置 overflow hidden auto
+实例8 hover使用，结合布局
+实例11 输入框右侧添加一个图标,relative absolute

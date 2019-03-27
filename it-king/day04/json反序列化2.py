@@ -1,0 +1,13 @@
+__author__ = "Peter"
+import pickle
+
+
+def sayhi(name):
+    print("hello2,", name)
+
+
+f = open("test.text", "rb")
+
+data = pickle.load(f)  # data = pickle.loads(f.read())
+
+print(data["func"]("Alex"))

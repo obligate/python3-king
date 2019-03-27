@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  行为，样式，结构不相分离的页面-->
+<table style="border:1px solid red;width:500px;border-collapse: collapse; ">
+        <tr style="border:1px solid red;" onmouseover="t1(0)" onmouseout="t2(0)">
+            <td style="border:1px solid red;">1</td>
+            <td style="border:1px solid red;">2</td>
+            <td style="border:1px solid red;">3</td>
+            <td style="border:1px solid red;">4</td>
+        </tr>
+        <tr style="border:1px solid red;" onmouseover="t1(1)" onmouseout="t2(1)">
+            <td style="border:1px solid red;">1</td>
+            <td style="border:1px solid red;">2</td>
+            <td style="border:1px solid red;">3</td>
+            <td style="border:1px solid red;">4</td>
+        </tr>
+        <tr style="border:1px solid red;" onmouseover="t1(2)" onmouseout="t2(2)">
+            <td style="border:1px solid red;">1</td>
+            <td style="border:1px solid red;">2</td>
+            <td style="border:1px solid red;">3</td>
+            <td style="border:1px solid red;">4</td>
+        </tr>
+</table>
+<script>
+    function t1(n){
+        var trs = document.getElementsByTagName("tr");
+        trs[n].style.backgroundColor="blue";
+    }
+     function t2(n){
+        var trs = document.getElementsByTagName("tr");
+        trs[n].style.backgroundColor="";
+    }
+</script>
+</body>
+</html>

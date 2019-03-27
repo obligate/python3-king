@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="i1">
+    test
+</div>
+<script>
+    // dom2 绑定事件发方式，使用addEventListener
+    var mydiv = document.getElementById("i1");
+    mydiv.addEventListener("click",function(){console.log("aaa");},false); // false是冒泡模型，true是捕捉模型
+    mydiv.addEventListener("click",function(){console.log("bbb");},false);
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* #i1 {
+             background-color: #2459a2;
+             height: 48px;
+         }
+
+         #i2 {
+             background-color: #2459a2;
+             height: 48px;
+         }
+
+         #i3 {
+             background-color: #2459a2;
+             height: 48px;
+         }
+
+         .c1 {
+             background-color: #2459a2;
+             height: 10px;
+         }
+         div{
+             background-color:black;
+             color: white;
+         }*/
+        .c1 div { /*层级[关联]选择器（空格）*/
+            background-color: black;
+            color: white;
+        }
+
+        .i1, .i2, .i3 { /*组合选择器（逗号）*/
+            background-color: black;
+            color: white;
+        }
+        .c1[n="whisper"]{ width:100px; height:200px; }
+    </style>
+</head>
+<body>
+<div class="i1">1</div>
+<span class="c1"> span1111
+    <div class="c2">span--div</div>
+    span222222
+</span>
+<div class="i3">3</div>
+<input class="c1" type="text" n="whisper">
+<input class="c1" type="password">
+</body>
+</html>
